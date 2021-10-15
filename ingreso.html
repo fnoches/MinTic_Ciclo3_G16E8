@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+    {% block titulo %} Ingreso {% endblock %}
+
+    {% block contenido %}
+        <form action="/ingreso" method="POST">
+            {{ csrf_token }}
+
+            <input type=submit name="" value="Ingresar"> 
+        </form>
+    {% endblock %}

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+    {% block titulo %} Página de calificaciones del estudiante {% endblock %}
+
+    {% block contenido %}
+    <br>
+    <p>En esta página se observa las calificaciones generales del estudiante.</p>
+    
+    <form action="/usuario" method="GET">
+        {{ csrf_token }}
+
+        <input type=submit name="" value="Página de Usuario"> 
+    </form>
+    
+    {% endblock %}

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+    {% block titulo %} Página de Perfil de Usuario {% endblock %}
+
+    {% block contenido %}
+    <br>
+    <p>En esta página se observa la información personal del usuario.</p>
+    
+    <form action="/usuario" method="GET">
+        {{ csrf_token }}
+
+        <input type=submit name="" value="Página de Usuario"> 
+    </form>
+    
+    {% endblock %}

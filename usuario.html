@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+    {% block titulo %} Página Principal de Usuario {% endblock %}
+
+    {% block contenido %}
+    <br>
+    <p>En esta página se observan las opciones de <a href="\usuario\Est1\cursos"> cursos matriculados/asignados </a> para estudiantes y profesores; la opción de <a href="\usuario\perfil"> perfil de usuario </a> para estudiantes y profesores y la opción de <a href="\usuario\Est1\calificaciones">calificaciones</a> solo para estudiantes</p>    
+    
+    <form action="/inicio" method="POST">
+        {{ csrf_token }}
+
+        <input type=submit name="" value="Inicio"> 
+    </form>
+    
+    {% endblock %}
