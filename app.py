@@ -1,7 +1,10 @@
+from typing import cast
 from flask import Flask
 from flask import render_template as render
 from flask import redirect
 from flask import request
+from sqlalchemy import create_engine
+from db import get_db, close_db
 
 app = Flask(__name__)
 
@@ -16,6 +19,8 @@ lista_cursos = {
     "456": {'materia':"Materia 4", 'profesor':"Profesor 2", 'estudiantes':['Est 1', 'Est 2', 'Est 3']},
     "678": {'materia':"Materia 5", 'profesor':"Profesor 1", 'estudiantes':['Est 1', 'Est 2', 'Est 3']},
 }
+
+engine = create_engine('sqlite:///census_nyc')
 
 sesion_iniciada = False
 
@@ -32,7 +37,36 @@ def inicio():
 
 @app.route("/registro", methods=["GET", "POST"])
 def registro():
-    return render("registro.html")
+    if request.method == 'POST':    
+        id = request.form['id']
+        nombre = request.form['nombre']
+        correo = request.form['correo']
+        telefono = request.form['telefono']
+        contraseña = request.form['contraseña']
+        categoria = request.form['categoria']
+
+        error = None
+        db = get_db()
+
+        if error is not None:
+            return render("registro.html")
+        else:
+            if categoria == "Estudiante":
+                db.execute(
+                    'INSERT INTO estudiantes(id_estudiante, nombre_estudiante, correo_estudiante, telefono_estudiante, contraseña_estudiante) VALUES (?,?,?,?,?) ',(id, nombre, correo, telefono, contraseña)
+                )
+                db.commit()
+            else:
+                db.execute(
+                    'INSERT INTO docentes(id_docente, nombre_docente, correo_docente, telefono_docente, contraseña_docente) VALUES (?,?,?,?,?) ',(id, nombre, correo, telefono, contraseña)
+                )
+                db.commit()
+            db=close_db()
+            return redirect("/ingreso")
+
+    else:    
+        return render("registro.html")
+    
 
 @app.route("/ingreso", methods=["GET", "POST"])
 def ingreso():
@@ -40,8 +74,21 @@ def ingreso():
     if request.method == "GET":
         return render("ingreso.html")
     else:
-        sesion_iniciada = True
-        return redirect("/usuario")
+        id = request.form['id']
+        contraseña = request.form['contraseña']
+        categoria = request.form['categoria']
+        db = get_db()
+        
+        if categoria == "Estudiante":
+            contra = db.execute('SELECT contraseña_estudiante FROM estudiantes WHERE id_estudiante = ?',(id,)).fetchone()
+        else:
+            contra = db.execute('SELECT contraseña_docente FROM docentes WHERE id_docente = ?',(id,)).fetchone()
+
+        if  contra[0] == contraseña:
+            sesion_iniciada = True
+            return redirect("/usuario")
+        else:
+            return redirect("/ingreso")
 
 @app.route("/salir", methods=["POST"])
 def salir():
