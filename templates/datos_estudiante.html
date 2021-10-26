@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil estudiante</title>
+    <link rel="shortcut icon" href="static/img/pngwing.com (1).png" type="image/x-icon">
+    <link rel="stylesheet" href="static/css/estilo_datos_pers.css">
+</head>
+<body>
+    <h1>Información personal estudiante</h1>
+    <table style="width: 100%;">
+        <tr>
+            <th>Información básica</th>
+            <th>Información de contacto</th>
+        </tr>
+        <tr>
+            <td>Nombre completo</td>
+            <td></td>
+
+        </tr>
+            
+        <tr>
+            <td>Dirección de correo electrónico</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>ID estudiante</td>
+            <td>Número de teléfono</td>
+
+        </tr>
+        <tr>
+            <td></td>
+            <td>Número de celular</td>
+
+        </tr>
+        <tr>
+            <td></td>
+            <td>Dirección de domicilio</td>
+
+        </tr>
+    </table>
+
+    <p>En esta página se observa la información personal del usuario.</p>
+    
+    <form action="/perfilestudiante" method="GET">
+        {{ csrf_token }}
+
+        <input type=submit name="" value="Página de Usuario"> 
+    </form>
+
+</body>
+</html>

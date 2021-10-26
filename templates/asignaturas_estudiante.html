@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor de notas</title>
+    <link rel="shortcut icon" href="static/img/pngwing.com (1).png" type="image/x-icon">
+    <link rel="stylesheet" href="static/css/asignaturas_estudiantes.css">
+</head>
+<body>
+    <h1>ESTUDIANTE</h1>
+    <nav class="nav">
+        <ul class="list">
+
+            <li class="list__item">
+                <div class="list__button">
+                    <img src="static/assets/dashboard.svg" class="list__img">
+                    <a href="#" class="nav__link">Asignaturas</a>
+                </div>
+            </li>
+
+            <li class="list__item list__item--click">
+                <div class="list__button list__button--click">
+                    <img src="static/assets/docs.svg" class="list__img">
+                    <a href="#" class="nav__link">Asignatura A</a>
+                    <img src="static/assets/arrow.svg" class="list__arrow">
+                </div>
+
+                <ul class="list__show">
+                    <li class="list__inside">
+                        <a href="#" class="nav__link nav__link--inside">Actividad #1</a>
+                    </li>
+
+                    <li class="list__inside">
+                        <a href="#" class="nav__link nav__link--inside">Actividad #2</a>
+                    </li>
+                </ul>
+
+            </li>
+
+
+            <li class="list__item">
+                <div class="list__button">
+                    <img src="static/assets/stats.svg" class="list__img">
+                    <a href="#" class="nav__link">Estadisticas</a>
+                </div>
+            </li>
+
+            <li class="list__item list__item--click">
+                <div class="list__button list__button--click">
+                    <img src="static/assets/docs.svg" class="list__img">
+                    <a href="#" class="nav__link">Asignatura B</a>
+                    <img src="static/assets/arrow.svg" class="list__arrow">
+                </div>
+
+                <ul class="list__show">
+                    <li class="list__inside">
+                        <a href="#" class="nav__link nav__link--inside">Actividad #1</a>
+                    </li>
+
+                    <li class="list__inside">
+                        <a href="#" class="nav__link nav__link--inside">Actividad #2</a>
+                    </li>
+
+                    <li class="list__inside">
+                        <a href="#" class="nav__link nav__link--inside">Actividad #3</a>
+                    </li>
+                </ul>
+
+            </li>
+
+
+            <li class="list__item">
+                <div class="list__button">
+                    <img src="static/assets/message.svg" class="list__img">
+                    <a href="#" class="nav__link">Contacto</a>
+                </div>
+            </li>
+
+        </ul>
+    </nav>
+
+    <p>En esta página se observan los cursos matriculados por el estudiante</p>
+    
+    <form action="/perfilestudiante/asignaturas_estudiante/cursos/123" method="GET">
+        {{ csrf_token }}
+
+        <input type=submit name="" value="Curso 1"> 
+    </form>
+
+    <form action="/perfilestudiante/asignaturas_estudiante/cursos/234" method="GET">
+        {{ csrf_token }}
+
+        <input type=submit name="" value="Curso 2"> 
+    </form>
+    
+    <form action="/perfilestudiante/asignaturas_estudiante/cursos/678" method="GET">
+        {{ csrf_token }}
+
+        <input type=submit name="" value="Curso x"> 
+    </form>
+
+    <form action="/perfilestudiante" method="GET">
+        {{ csrf_token }}
+
+        <input type=submit name="" value="Página de Perfil"> 
+    </form>
+
+    <script src="static/js/main.js"></script>
+</body>
+</html>

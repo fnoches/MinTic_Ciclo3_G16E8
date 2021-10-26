@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Gestor de notas</title>
+        <link rel="shortcut icon" href="static/img/pngwing.com (1).png" type="image/x-icon">
+        <link rel="stylesheet" href="static/css/estilos.css">
+    </head>
+    <body>
+
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul class=flashes>
+                    {% for message in messages %}
+                    <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+             {% endif %}
+        {% endwith %}
+
+        <div class="container" >
+            <div class="form-box">
+                <div class="button-box">
+                    <div id="elegir"></div>
+                    
+                    <button type="button" class="toggle-btn" onclick="registro()">Registrarse</button>
+
+                </div>
+               
+
+                <form action="/registro" method="POST">
+                    {{ csrf_token }}
+                    <div>
+                      <label for="id">ID</label>
+                      <input type="text" placeholder="id" id="id" name="id">
+                    </div>
+                    <div>
+                      <label for="nombre">Nombre</label>
+                      <input type="text" placeholder="nombre" id="nombre" name="nombre">
+                    </div>
+                    <div>
+                      <label for="correo">Correo</label>
+                      <input type="email" placeholder="correo" id="correo" name="correo">
+                    </div>
+                    <div>
+                      <label for="telefono">Telefono</label>
+                      <input type="text" placeholder="telefono" id="telefono" name="telefono">
+                    </div>
+                    <div>
+                      <label for="usuario">Usuario</label>
+                      <input type="text" placeholder="usuario" id="usuario" name="usuario">
+                    </div>
+                    <div>
+                      <label for="contraseña">Contraseña</label>
+                      <input type="password" placeholder="contraseña" id="contraseña" name="contraseña">
+                    </div>
+                    <div>
+                      <label for="categoria">Categoría</label>
+                      <select id="categoria" name="categoria">
+                        <option value="Estudiante">Estudiante</option>
+                        <option value="Docente">Docente</option>
+                      </select>
+                    <input type=submit name="" value="Registrarse">
+                    </div> 
+                </form>
+
+            </div>
+            
+
+
+        </div>
+
+        <script>
+            
+            var y=document.getElementById("registro");
+            var z=document.getElementById("elegir");
+
+            function registro(){
+                x.style.left="50px";
+                y.style.left="450px";
+                z.style.left="0px";
+            }
+
+
+        </script>
+
+        
+        
+    </body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Gestor de notas</title>
+        <link rel="shortcut icon" href="static/img/pngwing.com (1).png" type="image/x-icon">
+        <link rel="stylesheet" href="static/css/estilos.css">
+    </head>
+    <body>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul class=flashes>
+                    {% for message in messages %}
+                    <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+             {% endif %}
+        {% endwith %}
+
+        <div class="container" >
+            <div class="form-box">
+                <div class="button-box">
+                    <div id="elegir"></div>
+                    <button type="button" class="toggle-btn" onclick="login()">Iniciar sesión</button>
+                    
+
+                </div>
+                <form action="/ingreso" method="POST">
+                    {{ csrf_token }}
+                    <div>
+                        <label for="usuario">Usuario</label>
+                        <input type="text" placeholder="usuario" id="usuario" name="usuario">
+                    </div>
+                    <div>
+                        <label for="contraseña">Contraseña</label>
+                        <input type="password" placeholder="contraseña" id="contraseña" name="contraseña">
+                    </div>
+                    <div>
+                        <label for="categoria">Categoría</label>
+                        <select id="categoria" name="categoria">
+                            <option value="Docente">Docente</option>
+                            <option value="Estudiante">Estudiante</option>
+                        </select>
+                    </div>
+                    <input type=submit name="" value="Ingresar"> 
+                </form>
+            </div>
+        </div>
+
+        <script>
+            var x=document.getElementById("login");
+            var z=document.getElementById("elegir");
+
+            function login(){
+                x.style.left="50px";
+                y.style.left="450px";
+                z.style.left="0px";
+            }
+        </script>
+    </body>
+</html>

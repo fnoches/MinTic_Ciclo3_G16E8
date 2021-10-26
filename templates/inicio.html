@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+    {% block titulo %} Inicio {% endblock %}
+
+    {% block contenido %}
+    <br>
+
+    {% if sesion_iniciada %}
+        <p>Bienvenido</p>
+
+        <br>
+
+        {% for key, curso in lista_cursos.items() %}
+            <h2>{{ curso.materia }}</h2>
+            <p>{{ curso.profesor }} <a href="/curso/{{ key }}">[Click aquí]</a> </p>
+
+            {% for est in curso.estudiantes %}
+            <p>{{ est }}</p>
+            {% endfor %}
+
+        {% endfor %}
+
+        <form action="/salir" method="POST">
+            {{ csrf_token }}
+
+            <input type=submit name="" value="Salir"> 
+        </form>
+        {% else %}
+        <p>Para poder ver tu información, cursos y calificaciones debes iniciar sesión: <a href="\ingreso">[Click aquí]</a></p>
+        <p>Si aún no estás registrado: <a href="\registro">[Click aquí]</a></p>
+        <p>Si eres superadministrador: <a href="\usuario\superadmin\dashboard">[Click aquí]</a></p>
+        {% endif %}    
+    {% endblock %}

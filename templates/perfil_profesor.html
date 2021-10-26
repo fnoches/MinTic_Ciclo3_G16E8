@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Perfil docente</title>
+        <link rel="shortcut icon" href="static/img/pngwing.com (1).png" type="image/x-icon">
+        <link rel="stylesheet" href="static/css/estilo_perfil.css">
+    </head>
+    <body>
+
+        <h1>DOCENTE</h1>
+        <ul class="menu">
+            <li><a href="/perfilprofesor/datosprofesor">Información Personal</a></li>
+            <li><a href="#">Registrar actividades</a></li>
+            <li><a href="/perfilprofesor/asignaturas_profesor">Materias asignadas</a></li>
+            <li><a href="#">Calificar actividades</a></li>
+            <li><a href="#">Retroalimentación</a></li>
+            
+        </ul>
+        
+        <form action="/inicio" method="POST">
+            {{ csrf_token }}
+            <input type=submit name="" value="Inicio"> 
+        </form>
+
+    </body>
+</html>
