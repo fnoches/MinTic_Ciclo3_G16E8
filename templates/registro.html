@@ -23,53 +23,48 @@
         <div class="container" >
             <div class="form-box">
                 <div class="button-box">
-                    <div id="elegir"></div>
-                    
-                    <button type="button" class="toggle-btn" onclick="registro()">Registrarse</button>
-
+                    <label for="registro">Registrarse</label>
                 </div>
                
 
-                <form action="/registro" method="POST">
+                <form class="input-group" action="/registro" method="POST">
                     {{ csrf_token }}
                     <div>
+                      <input type="text" class="input-field" placeholder="id" id="id" name="id" >
                       <label for="id">ID</label>
-                      <input type="text" placeholder="id" id="id" name="id">
                     </div>
                     <div>
+                      <input type="text"class="input-field" placeholder="nombre" id="nombre" name="nombre">
                       <label for="nombre">Nombre</label>
-                      <input type="text" placeholder="nombre" id="nombre" name="nombre">
                     </div>
                     <div>
+                      <input type="email"class="input-field" placeholder="correo" id="correo" name="correo">
                       <label for="correo">Correo</label>
-                      <input type="email" placeholder="correo" id="correo" name="correo">
                     </div>
                     <div>
+                      <input type="text"class="input-field" placeholder="telefono" id="telefono" name="telefono">
                       <label for="telefono">Telefono</label>
-                      <input type="text" placeholder="telefono" id="telefono" name="telefono">
                     </div>
                     <div>
+                      <input type="text"class="input-field" placeholder="usuario" id="usuario" name="usuario">
                       <label for="usuario">Usuario</label>
-                      <input type="text" placeholder="usuario" id="usuario" name="usuario">
                     </div>
                     <div>
+                      <input type="password"class="input-field" placeholder="contraseña" id="contraseña" name="contraseña">
                       <label for="contraseña">Contraseña</label>
-                      <input type="password" placeholder="contraseña" id="contraseña" name="contraseña">
                     </div>
-                    <div>
+                    <div class="categoria">
                       <label for="categoria">Categoría</label>
                       <select id="categoria" name="categoria">
                         <option value="Estudiante">Estudiante</option>
                         <option value="Docente">Docente</option>
                       </select>
-                    <input type=submit name="" value="Registrarse">
+                      <div class="registro">
+                        <input  type=submit class="submit-registro" name="" value="Registrarse">
+                      </div>
                     </div> 
                 </form>
-
             </div>
-            
-
-
         </div>
 
         <script>
@@ -83,10 +78,7 @@
                 z.style.left="0px";
             }
 
-
         </script>
 
-        
-        
     </body>
 </html>
