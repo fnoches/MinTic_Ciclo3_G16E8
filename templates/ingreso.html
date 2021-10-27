@@ -22,38 +22,41 @@
         <div class="container" >
             <div class="form-box">
                 <div class="button-box">
-                    <div id="elegir"></div>
-                    <button type="button" class="toggle-btn" onclick="login()">Iniciar sesión</button>
-                    
-
+                    <label for="ingreso">Iniciar sesión</label>
                 </div>
-                <form action="/ingreso" method="POST">
+                <form class="input-group" action="/ingreso" method="POST">
                     {{ csrf_token }}
                     <div>
+                        <input type="text"class="input-field" placeholder="usuario" id="usuario" name="usuario">
                         <label for="usuario">Usuario</label>
-                        <input type="text" placeholder="usuario" id="usuario" name="usuario">
                     </div>
                     <div>
+                        <input type="password"class="input-field" placeholder="contraseña" id="contraseña" name="contraseña">
                         <label for="contraseña">Contraseña</label>
-                        <input type="password" placeholder="contraseña" id="contraseña" name="contraseña">
                     </div>
-                    <div>
+                    <div class="categoriaingreso">
                         <label for="categoria">Categoría</label>
                         <select id="categoria" name="categoria">
                             <option value="Docente">Docente</option>
                             <option value="Estudiante">Estudiante</option>
                         </select>
                     </div>
-                    <input type=submit name="" value="Ingresar"> 
+                    <br>
+                    <br>
+                    <br>
+                    <div class="ingreso">
+                        <input type=submit class="submit-ingreso"  name="" value="Ingresar"> 
+                    </div>
+                    
                 </form>
             </div>
         </div>
 
         <script>
-            var x=document.getElementById("login");
+            var x=document.getElementById("ingreso");
             var z=document.getElementById("elegir");
 
-            function login(){
+            function ingreso(){
                 x.style.left="50px";
                 y.style.left="450px";
                 z.style.left="0px";
