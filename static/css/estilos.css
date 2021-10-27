@@ -26,41 +26,26 @@
 }
 
 .button-box{
+    text-align: center;
     width: 240px;
+    height: 30px;
+    padding: 3px;
     margin: 30px auto;
     position: relative;
     box-shadow: 0 0 20px 9px #e0e0e0;
     border-radius: 30px;
-}
-.toggle-btn{
-    padding: 10px 22px;
-    cursor: pointer;
-    background: transparent;
-    border: 0px;
-    outline: none;
-    position: relative;
-
-}
-
-#elegir{
-    top: 0;
-    left: 0;
-    position: absolute;
-    width: 120px;
-    height: 100%;
     background: linear-gradient(to right, rgba(63,81,181,0.7),rgba(0,188,212,0.7));
-    border-radius: 30px;
-    transition: 0.8s;
 }
+
 .input-group{
-    top: 180px;
+    top: 100px;
     position: absolute;
     width: 280px;
     transition: 0.8s;
 }
 .input-field{
-    width: 100%;
-    padding: 10px 0;
+    width: 95%;
+    padding: 1px 0;
     margin: 5px 0;
     border-left: 0;
     border-top: 0;
@@ -69,21 +54,61 @@
     outline: none;
     background: transparent;
 }
-.submit-btn{
-    width: 85%;
-    padding: 10px 30px;
+.categoria{
+    top: 300px;
+    position: absolute;
+    transition: 0.8s;  
+}
+.categoriaingreso{
+    top: 110px;
+    position: absolute;
+    transition: 0.8s;  
+
+}
+.submit-registro{
+    text-align: center;
+    width: 100px;
+    height: 30px;
     cursor: pointer;
-    display: block;
-    margin:auto;
+    margin: auto 100px;;
     background: linear-gradient(to right, rgba(63,81,181,0.7),rgba(0,188,212,0.7));
     border: 0px;
-    outline: none;
+    border-radius: 30px;
+}
+.submit-ingreso{
+    text-align: center;
+    width: 100px;
+    height: 30px;
+    cursor: pointer;
+    margin: auto 50px;;
+    background: linear-gradient(to right, rgba(63,81,181,0.7),rgba(0,188,212,0.7));
+    border: 0px;
+    border-radius: 30px;
+}
+
+.registro{
+    width: 100px;
+    height: 30px;
+    bottom:50% ;
+    cursor: pointer;
+    margin:auto;
+    border: 0px;
+    border-radius: 30px;
+}
+
+.ingreso{
+    width: 100px;
+    height: 30px;
+    bottom:50% ;
+    cursor: pointer;
+    margin:auto;
+    border: 0px;
     border-radius: 30px;
 }
 .chec-kbox{
     margin: 30px 10px 30px 0;
 }
-#login{
+#ingreso{
     left: 50px;
 }
 #registro{
